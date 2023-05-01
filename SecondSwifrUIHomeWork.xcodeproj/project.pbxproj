@@ -14,6 +14,8 @@
 		2A6B358D29EC517B00889F3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6B358C29EC517B00889F3E /* Preview Assets.xcassets */; };
 		2A6B359429EC599900889F3E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B359329EC599900889F3E /* SuffixSequence.swift */; };
 		2A6B359629EC5F1000889F3E /* SuffixListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B359529EC5F1000889F3E /* SuffixListView.swift */; };
+		2A8F456F29FFED42005AE97C /* SuffixHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F456E29FFED42005AE97C /* SuffixHistoryView.swift */; };
+		2A8F45712A000C5F005AE97C /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F45702A000C5F005AE97C /* JobScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		2A6B358C29EC517B00889F3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A6B359329EC599900889F3E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		2A6B359529EC5F1000889F3E /* SuffixListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixListView.swift; sourceTree = "<group>"; };
+		2A8F456E29FFED42005AE97C /* SuffixHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixHistoryView.swift; sourceTree = "<group>"; };
+		2A8F45702A000C5F005AE97C /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				2A6B358729EC517700889F3E /* ContentView.swift */,
 				2A6B359529EC5F1000889F3E /* SuffixListView.swift */,
 				2A32DEC629ED4AF8006CC24B /* TopListView.swift */,
+				2A8F456E29FFED42005AE97C /* SuffixHistoryView.swift */,
 				2A6B359329EC599900889F3E /* SuffixSequence.swift */,
+				2A8F45702A000C5F005AE97C /* JobScheduler.swift */,
 				2A6B358929EC517B00889F3E /* Assets.xcassets */,
 				2A6B358B29EC517B00889F3E /* Preview Content */,
 			);
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8F45712A000C5F005AE97C /* JobScheduler.swift in Sources */,
 				2A6B358829EC517700889F3E /* ContentView.swift in Sources */,
+				2A8F456F29FFED42005AE97C /* SuffixHistoryView.swift in Sources */,
 				2A6B359429EC599900889F3E /* SuffixSequence.swift in Sources */,
 				2A32DEC729ED4AF8006CC24B /* TopListView.swift in Sources */,
 				2A6B358629EC517700889F3E /* SecondSwifrUIHomeWorkApp.swift in Sources */,

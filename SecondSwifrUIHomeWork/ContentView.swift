@@ -11,30 +11,42 @@ struct ContentView: View {
 
     @State private var viewIndex = 0
     @State public var text: String
+    @State private var searchHistory: [String] = []
 
-    var views = ["Список", "Топ 10"]
+    var views = ["Список", "Топ 10", "История поиска"]
+    let jobScheduler = JobScheduler(maxConcurrentJobs: 2)
     
     var body: some View {
         VStack {
-            TextField("Введите текст", text: $text)
-            
+            TextField("Введите текст", text: $text, onCommit: {
+                if !text.isEmpty {
+                    let job1: () -> Void = {
+                        print("Job 1 started")
+                        searchHistory.append(text)
+                    }
+                    jobScheduler.addJob(job1)
+                    text = ""
+                }
+            })
+
+
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             Picker(selection: $viewIndex, label: Text("Выберите вид")) {
-                ForEach(0..<2) { index in
+                ForEach(0..<3) { index in
                     Text(self.views[index]).tag(index)
                 }
             }.pickerStyle(SegmentedPickerStyle())
-                .onChange(of: text) { newValue in
-                    viewIndex = 2
-                }
+ 
 
             if viewIndex == 0 {
                 View1(text: $text)
             } else if viewIndex == 1 {
                 View2(text: $text)
-            } 
+            } else if viewIndex == 2 {
+                View3(story: $searchHistory)
+            }
             
             Spacer()
         }
@@ -57,6 +69,14 @@ struct ContentView: View {
 
         var body: some View {
             TopListView(text: $text)
+        }
+    }
+    
+    struct View3: View {
+        @Binding var story: [String]
+
+        var body: some View {
+            SuffixHistoryView(searchHistory: $story)
         }
     }
 }

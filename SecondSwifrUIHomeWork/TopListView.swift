@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopListView: View {
+    private let jobQueue = DispatchQueue(label: "SuffixListView.jobQueue", qos: .userInitiated)
     @Binding var text: String
     @State private var suffixes: [String: Int] = [:]
     
@@ -33,9 +34,13 @@ struct TopListView: View {
             for word in text.split(whereSeparator: { !($0.isLetter) }) {
                 let suffixSequence = SuffixSequence(word: String(word))
                 
-                for suffix in suffixSequence {
-                    if suffix.count > 0 {
-                        suffixes[String(suffix), default: 0] += 1
+                jobQueue.async {
+                    for suffix in suffixSequence {
+                        if suffix.count > 0 {
+                            DispatchQueue.main.async {
+                                suffixes[String(suffix), default: 0] += 1
+                            }
+                        }
                     }
                 }
             }
